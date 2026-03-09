@@ -90,8 +90,7 @@ const allProjects = [
 export default function ProjectsPage() {
   return (
     <main className="relative min-h-screen pt-32 pb-24 px-6 text-[#e8e8f0] selection:bg-[#6366f1]/30 overflow-x-hidden">
-      
-      {/* BACKGROUND ELEMENTS */}
+
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6366f1]/5 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#a855f7]/5 rounded-full blur-[120px] -z-10" />
       

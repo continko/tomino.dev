@@ -53,7 +53,6 @@ export default function Hero() {
         animate="visible"
         className="relative z-10 max-w-5xl mx-auto text-center"
       >
-        {/* Heading - Teraz začína vyššie a pôsobí dominantnejšie */}
         <motion.h1
           variants={itemVariants}
           className="text-6xl sm:text-7xl md:text-8xl lg:text-[110px] font-bold tracking-tight leading-[0.85] mb-10"

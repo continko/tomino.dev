@@ -29,7 +29,8 @@ const projectsData = {
     solution: "Použitie Prisma ORM s transakčnou logikou a vlastný webhook systém pre Stripe, ktorý okamžite blokuje vozidlo v databáze po inicializácii platby.",
     tech: ["Next.js 14", "Stripe API", "Prisma", "PostgreSQL", "Tailwind", "Framer Motion"],
     features: ["Dynamic Fleet Management", "Stripe Connect", "Automated PDF Invoices", "Real-time Booking Engine"],
-    accent: "#6366f1"
+    accent: "#6366f1",
+    link: "https://elite-drive-web.vercel.app/"
   },
   luxora: {
     title: "Luxora",
@@ -42,7 +43,8 @@ const projectsData = {
     solution: "Implementácia pokročilého lazy-loadingu, optimalizácia obrázkov cez Next/Image a použitie Framer Motion pre plynulý scroll zážitok.",
     tech: ["Next.js", "Framer Motion", "GSAP", "Tailwind", "Sanity CMS"],
     features: ["Interactive Floor Plans", "4K Visual Galleries", "SEO Optimized Architecture", "Lead Gen Forms"],
-    accent: "#C5A059"
+    accent: "#C5A059",
+    link: "https://luxoradevelopment.vercel.app/"
   },
   "nexus-ai": {
     title: "Nexus AI",
@@ -55,7 +57,8 @@ const projectsData = {
     solution: "Využitie Web Workers pre spracovanie dát na pozadí a Offscreen Canvas pre plynulé vykresľovanie grafov.",
     tech: ["Python", "TensorFlow", "React", "D3.js", "Web Workers"],
     features: ["Real-time Loss Tracking", "Weights Visualization", "Export to PyTorch", "Cloud Model Sync"],
-    accent: "#10b981"
+    accent: "#10b981",
+    link: "https://luxoradevelopment.vercel.app/"
   },
   convertlab: {
     title: "ConvertLab",
@@ -68,7 +71,8 @@ const projectsData = {
     solution: "Striktné použitie Tailwind CSS bez zbytočných runtime knižníc a optimalizácia kritického CSS cesty.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Storybook", "Vercel"],
     features: ["A/B Test Ready", "SEO Optimized", "Radix UI Primitives", "Dark Mode System"],
-    accent: "#06b6d4"
+    accent: "#06b6d4",
+    link: "https://luxoradevelopment.vercel.app/"
   },
   "velvet-atlas": {
     title: "Velvet Atlas",
@@ -81,7 +85,8 @@ const projectsData = {
     solution: "Použitie formátu GLB s Draco kompresiou a Three.js knižnice pre plynulé interakcie v prehliadači.",
     tech: ["Three.js", "Shopify Hydrogen", "Remix", "Draco Compression"],
     features: ["3D Product Viewer", "Custom Checkout Flow", "Omnichannel Inventory", "AR Try-on Preview"],
-    accent: "#ec4899"
+    accent: "#ec4899",
+    link: "https://luxoradevelopment.vercel.app/"
   },
   launchkit: {
     title: "LaunchKit",
@@ -94,21 +99,9 @@ const projectsData = {
     solution: "Modularizovaný kód s jasným oddelením business logiky a infraštruktúry, postavený na modernom T3 stacku.",
     tech: ["Supabase", "Next.js", "Trpc", "Zod", "Tailwind"],
     features: ["Auth & RBAC", "Subscription Engine", "Admin Dashboard", "Email Templates"],
-    accent: "#f59e0b"
+    accent: "#f59e0b",
+    link: "https://luxoradevelopment.vercel.app/"
   },
-  cryptovault: {
-    title: "CryptoVault",
-    subtitle: "Digital Assets Mgr",
-    category: "Blockchain / Security",
-    year: "12.2024",
-    description: "Bezpečné rozhranie pre správu kryptomien a NFT kolekcií s dôrazom na UX.",
-    story: "Väčšina krypto peňaženiek je neohrabaná. CryptoVault mení pohľad na správu digitálnych aktív cez intuitívny dashboard.",
-    challenges: "Bezpečné ukladanie citlivých údajov a integrácia viacerých blockchainov do jedného zobrazenia.",
-    solution: "Implementácia lokálneho šifrovania AES-256 a využitie viacerých API providerov pre agregáciu dát.",
-    tech: ["Web3.js", "Solidity", "Ethers.js", "React Native"],
-    features: ["Multi-chain Support", "NFT Gallery", "Biometric Security", "Transaction History"],
-    accent: "#8b5cf6"
-  }
 };
 
 export default function ProjectDetail() {
@@ -125,13 +118,11 @@ export default function ProjectDetail() {
   return (
     <main className="relative min-h-screen pt-32 pb-40 px-6 text-[#e8e8f0] selection:bg-[#6366f1]/40 overflow-x-hidden">
       
-      {/* GLOBÁLNE FIALOVÉ POZADIE (zladené s tvojím webom) */}
       <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-[#6366f1]/15 rounded-full blur-[160px] -z-10 animate-pulse" />
       <div className="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] bg-[#a855f7]/10 rounded-full blur-[140px] -z-10" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* BACK NAV - Uzemnené v šedej */}
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
           <Link href="/projects" className="group inline-flex items-center gap-4 mb-20 bg-[#0c0c12]/50 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-2xl hover:border-[#6366f1]/50 transition-all">
             <ArrowLeft size={18} className="text-[#6366f1] group-hover:-translate-x-1 transition-transform" />
@@ -139,7 +130,6 @@ export default function ProjectDetail() {
           </Link>
         </motion.div>
 
-        {/* HERO */}
         <div className="mb-32">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-3 mb-8">
             <Sparkles size={16} className="text-[#6366f1]" />
@@ -161,9 +151,14 @@ export default function ProjectDetail() {
                 </p>
              </div>
              <div className="lg:col-span-5 flex flex-wrap gap-4 lg:justify-end">
-                <a href="#" className="flex items-center gap-3 px-10 py-5 bg-[#6366f1] text-white rounded-[2rem] font-black text-[11px] uppercase tracking-widest hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] transition-all">
-                  Live Project <Globe size={18} />
-                </a>
+                <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-3 px-10 py-5 bg-[#6366f1] text-white rounded-[2rem] font-black text-[11px] uppercase tracking-widest hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] transition-all"
+                >
+              Live Project <Globe size={18} />
+              </a>
              </div>
           </div>
         </div>
@@ -172,8 +167,7 @@ export default function ProjectDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           <div className="lg:col-span-8 space-y-10">
-            
-            {/* The Story - Tmavá šedá karta */}
+
             <section className="relative p-12 rounded-[3rem] bg-[#0c0c12]/80 border border-white/5 backdrop-blur-3xl shadow-2xl overflow-hidden group">
                <div className="absolute top-0 right-0 p-10 opacity-5 group-hover:opacity-10 transition-opacity">
                   <Rocket size={120} />
