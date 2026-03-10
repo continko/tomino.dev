@@ -8,11 +8,25 @@ import {
   Zap, 
   ArrowUpRight, 
   Search,
-  Sparkles 
+  Sparkles, 
+  Wrench
 } from "lucide-react";
 import Link from "next/link";
 
 const allProjects = [
+  {
+    id: "kovo-sd",
+    title: "KOVO SD",
+    subtitle: "Industrial Manufacturing & Export",
+    category: "Heavy Industry",
+    status: "In Development", 
+    description: "Komplexná digitálna platforma pre poprednú strojársku firmu. Momentálne pracujem na implementácii multijazyčného rozhrania a interaktívnych galérií.",
+    icon: <Wrench size={24} />,
+    accent: "#6366f1",
+    image: "/image/KovoSDHomePage.png",
+    tags: ["Next.js", "Industrial SEO", "i18n"],
+    year: "2026"
+  },
   {
     id: "elitedrive",
     title: "EliteDrive",
@@ -21,7 +35,7 @@ const allProjects = [
     description: "Komplexný rezervačný systém s integráciou Stripe a správou vozového parku v reálnom čase. Optimalizované pre maximálny konverzný pomer.",
     icon: <Car size={24} />,
     accent: "#6366f1",
-    image: "/projects/elitedrive.jpg",
+    image: "/image/EliteDriveHomePage.PNG",
     tags: ["Next.js", "Stripe", "Prisma"],
     year: "02.2026"
   },
@@ -33,45 +47,9 @@ const allProjects = [
     description: "Digitálna prezentácia pre realitný projekt s dôrazom na high-end architektúru. Obsahuje plynulé scroll animácie a interaktívne galérie.",
     icon: <Building2 size={24} />,
     accent: "#C5A059",
-    image: "/projects/luxora.jpg",
+    image: "/image/LuxoraHomePage.PNG",
     tags: ["Framer Motion", "Tailwind"],
     year: "11.2025"
-  },
-  {
-    id: "nexus-ai",
-    title: "Nexus AI",
-    subtitle: "Deep Learning Dashboard",
-    category: "AI Platform",
-    description: "Inovatívna platforma na vizualizáciu dát z neurónových sietí. Umožňuje trénovanie modelov priamo v prehliadači s okamžitou odozvou.",
-    icon: <Zap size={24} />,
-    accent: "#10b981", // Emerald green
-    image: "/projects/nexus.jpg",
-    tags: ["Python", "TensorFlow", "React"],
-    year: "08.2025"
-  },
-  {
-    id: "convertlab",
-    title: "ConvertLab",
-    subtitle: "Marketing UI Kit",
-    category: "SaaS Product",
-    description: "Modulárna sada komponentov navrhnutá pre rýchle skladanie landing pages s vysokou performance a analytikou v reálnom čase.",
-    icon: <Layout size={24} />,
-    accent: "#06b6d4",
-    image: "/projects/convertlab.jpg",
-    tags: ["React", "TypeScript"],
-    year: "06.2025"
-  },
-  {
-    id: "velvet-atlas",
-    title: "Velvet Atlas",
-    subtitle: "E-commerce Engine",
-    category: "E-shop Solution",
-    description: "Headless e-commerce riešenie pre módny priemysel. Unikátne 3D zobrazenie produktov a ultra-rýchly checkout proces.",
-    icon: <Sparkles size={24} />,
-    accent: "#ec4899", // Pink
-    image: "/projects/velvet.jpg",
-    tags: ["Three.js", "Shopify API"],
-    year: "03.2025"
   },
   {
     id: "launchkit",
@@ -81,7 +59,7 @@ const allProjects = [
     description: "Full-stack štartér pre SaaS projekty. Obsahuje predpripravenú autentifikáciu, databázovú schému a integráciu platieb.",
     icon: <Zap size={24} />,
     accent: "#f59e0b",
-    image: "/projects/launchkit.jpg",
+    image: "/image/launchkit.jpg",
     tags: ["Supabase", "Next.js"],
     year: "02.2025"
   },
@@ -95,6 +73,7 @@ export default function ProjectsPage() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#a855f7]/5 rounded-full blur-[120px] -z-10" />
       
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* HEADER SEKCIA */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-32">
           <div className="max-w-3xl">
             <motion.div 
@@ -208,9 +187,22 @@ export default function ProjectsPage() {
                 {/* Text Content */}
                 <div className="px-6">
                   <div className="flex items-center gap-4 mb-5">
-                    <span className="text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: project.accent }}>
-                      {project.category}
-                    </span>
+                    <div className="flex items-center gap-3">
+                      
+                      {/* 1. IN PROGRESS BADGE (TERAZ PRVÝ) */}
+                      {project.status === "In Development" && (
+                        <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-[#dbd7db]/5 border border-[#dbd7db]/40">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#00ff22] animate-pulse shadow-[0_0_8px_#00ff22]" />
+                          <span className="text-[13px] font-black text-[#00ff22] uppercase tracking-widest">Building👨‍💻</span>
+                        </div>
+                      )}
+
+                      {/* 2. CATEGORY */}
+                      <span className="text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: project.accent }}>
+                        {project.category}
+                      </span>
+                    </div>
+
                     <div className="w-8 h-px bg-[#1e1e2e]" />
                     <span className="text-[11px] font-bold text-[#4f4f7a] uppercase tracking-[0.2em]">
                       {project.tags[0]} • {project.tags[1]}

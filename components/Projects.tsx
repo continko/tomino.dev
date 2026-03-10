@@ -57,7 +57,7 @@ const projects: Project[] = [
       { label: "Brand", value: "Luxora" },
     ],
   },
-  // Ostatné projekty (landing, saas) tu v zozname nechaj, slice ich odfiltruje na Home page
+  
   {
     id: "landing",
     title: "ConvertLab UI",

@@ -18,6 +18,20 @@ import {
 import Link from "next/link";
 
 const projectsData = {
+  "kovo-sd": {
+    title: "KOVO SD",
+    subtitle: "Industrial Manufacturing & Export",
+    category: "Heavy Industry",
+    year: "2026",
+    description: "Komplexná digitálna platforma pre poprednú strojársku firmu. Projekt zameraný na zjednotenie domácej identity a expanziu na zahraničné trhy.",
+    story: "Cieľom bolo nahradiť neefektívne generické riešenia autentickou prezentáciou, ktorá presne komunikuje technologické kapacity firmy od CNC laserového rezania až po výrobu oceľových hál.",
+    challenges: "Implementácia plynulého multijazyčného systému (SK/EN) na doméne .com pri zachovaní vysokého výkonu a optimalizácie pre vyhľadávače v konkurenčnom priemyselnom sektore.",
+    solution: "Využitie Next.js a i18n pre okamžité prepínanie jazykov. Architektúra postavená na statickom generovaní stránok (SSG) zaisťuje bleskové načítanie technických výkresov a galérií projektov.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "i18n", "Vercel"],
+    features: ["Multilingual Engine (SK/EN)", "B2B Lead Generation", "Project Showcase Grid", "Performance Optimized Architecture"],
+    accent: "#6366f1",
+    link: "https://kovosd.sk"
+  },
   elitedrive: {
     title: "EliteDrive",
     subtitle: "Premium Car Rental",
@@ -44,48 +58,6 @@ const projectsData = {
     tech: ["Next.js", "Framer Motion", "GSAP", "Tailwind", "Sanity CMS"],
     features: ["Interactive Floor Plans", "4K Visual Galleries", "SEO Optimized Architecture", "Lead Gen Forms"],
     accent: "#C5A059",
-    link: "https://luxoradevelopment.vercel.app/"
-  },
-  "nexus-ai": {
-    title: "Nexus AI",
-    subtitle: "Deep Learning Dashboard",
-    category: "AI Platform",
-    year: "08.2025",
-    description: "Inovatívna platforma na vizualizáciu dát z neurónových sietí. Umožňuje trénovanie modelov priamo v prehliadači.",
-    story: "Projekt vznikol ako potreba zjednodušiť monitoring komplexných AI modelov pre vývojárov, ktorí nechceli tráviť čas v termináli.",
-    challenges: "Vizualizácia tisícov dátových bodov za sekundu bez preťaženia hlavného vlákna prehliadača.",
-    solution: "Využitie Web Workers pre spracovanie dát na pozadí a Offscreen Canvas pre plynulé vykresľovanie grafov.",
-    tech: ["Python", "TensorFlow", "React", "D3.js", "Web Workers"],
-    features: ["Real-time Loss Tracking", "Weights Visualization", "Export to PyTorch", "Cloud Model Sync"],
-    accent: "#10b981",
-    link: "https://luxoradevelopment.vercel.app/"
-  },
-  convertlab: {
-    title: "ConvertLab",
-    subtitle: "Marketing UI Kit",
-    category: "SaaS Product",
-    year: "06.2025",
-    description: "Modulárna sada komponentov navrhnutá pre rýchle skladanie landing pages s vysokou performance.",
-    story: "ConvertLab je výsledkom stoviek A/B testov. Každý komponent je navrhnutý tak, aby maximalizoval pravdepodobnosť, že návštevník vykoná akciu.",
-    challenges: "Zabezpečiť, aby bol výsledný kód extrémne ľahký aj pri použití vizuálne bohatých komponentov.",
-    solution: "Striktné použitie Tailwind CSS bez zbytočných runtime knižníc a optimalizácia kritického CSS cesty.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Storybook", "Vercel"],
-    features: ["A/B Test Ready", "SEO Optimized", "Radix UI Primitives", "Dark Mode System"],
-    accent: "#06b6d4",
-    link: "https://luxoradevelopment.vercel.app/"
-  },
-  "velvet-atlas": {
-    title: "Velvet Atlas",
-    subtitle: "E-commerce Engine",
-    category: "E-shop Solution",
-    year: "03.2025",
-    description: "Headless e-commerce riešenie pre módny priemysel s unikátnym 3D zobrazením produktov.",
-    story: "Značka chcela digitálny zážitok, ktorý sa vyrovná návšteve butiku. Prepojili sme tradičný nákup s prvkami virtuálnej reality.",
-    challenges: "Implementácia 3D modelov oblečenia, ktoré sa načítavajú rýchlo aj na mobilných zariadeniach.",
-    solution: "Použitie formátu GLB s Draco kompresiou a Three.js knižnice pre plynulé interakcie v prehliadači.",
-    tech: ["Three.js", "Shopify Hydrogen", "Remix", "Draco Compression"],
-    features: ["3D Product Viewer", "Custom Checkout Flow", "Omnichannel Inventory", "AR Try-on Preview"],
-    accent: "#ec4899",
     link: "https://luxoradevelopment.vercel.app/"
   },
   launchkit: {

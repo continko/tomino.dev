@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Code2, Target, Quote } from "lucide-react";
+import { Sparkles, Code2, Target, Quote } from "lucide-react";
 import Contact from "@/components/Contact"; 
 
 const stats = [
   { label: "Roky v kóde", value: "2" },
   { label: "Projekty", value: "8+" },
-  { label: "Kávy / Debug", value: "∞" },
+  { label: "Tech Stack", value: "12+" },
   { label: "Mindset", value: "100%" },
 ];
 
