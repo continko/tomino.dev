@@ -9,7 +9,7 @@ const contactMethods = [
     title: "Rýchla správa",
     description: "Odpovedám do 24 hodín",
     action: "Napíšte mi",
-    href: "mailto:marek@example.com",
+    href: "mailto:hrmobusiness@gmail.com",
     color: "#6366f1",
   },
   {
@@ -24,16 +24,8 @@ const contactMethods = [
 
 export default function Contact() {
   return (
-    /* FIX: Odstránil som tie "breaking" šírky w-screen, ktoré robili paseku s overflowom.
-       Namiesto toho necháme sekciu prirodzene dýchať.
-    */
     <section id="contact" className="relative py-24 md:py-40 overflow-visible">
       
-      {/* GRADIENT FIX: 
-          Zmenil som ellipse na 100% 100% a posunul opacity, 
-          aby gradient plynulo zanikol skôr, než narazí na okraj sekcie.
-          Tým zmizne tá "horná a dolná čiara".
-      */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

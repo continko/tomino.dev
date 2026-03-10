@@ -13,8 +13,8 @@ export default function ContactPage() {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
   
-  const email = "hello@tomino.dev";
-  const phone = "+421 9xx xxx xxx";
+  const email = "tomino.dev@gmail.com";
+  const phone = "+421 918 765 525";
 
   const copyToClipboard = (text: string, type: 'email' | 'phone') => {
     navigator.clipboard.writeText(text);
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 
                 {/* Email s fialovou koncovkou .dev */}
                 <p className="text-2xl md:text-4xl font-bold text-white tracking-tighter mb-8 break-all">
-                  hello@tomino<span style={{ color: '#a855f7' }}>.dev</span>
+                  tomino.dev@gmail<span style={{ color: '#a855f7' }}>.com</span>
                 </p>
               </div>
               
