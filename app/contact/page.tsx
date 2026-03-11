@@ -126,7 +126,7 @@ export default function ContactPage() {
               <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-[#8888a8]"><Clock size={18} /></div>
               <span className="text-sm font-medium">GMT+1 (9:00 - 18:00)</span>
             </div>
-            <a href="#" className="p-6 rounded-[2rem] bg-[#0a0a0f]/50 border border-[#1e1e2e] flex items-center justify-between group hover:border-[#0077b5]/30 transition-colors">
+            <a href="https://www.linkedin.com/in/tomas-hrmo/" className="p-6 rounded-[2rem] bg-[#0a0a0f]/50 border border-[#1e1e2e] flex items-center justify-between group hover:border-[#0077b5]/30 transition-colors">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-xl bg-[#0077b5]/10 flex items-center justify-center text-[#0077b5]"><Linkedin size={18} /></div>
                 <span className="text-sm font-medium">LinkedIn</span>
