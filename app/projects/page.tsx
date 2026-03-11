@@ -28,19 +28,6 @@ const allProjects = [
     year: "02.2025"
   },
   {
-    id: "elitedrive",
-    title: "EliteDrive",
-    subtitle: "Car Rental",
-    status: "Finished", 
-    category: "Web App / Fintech",
-    description: "Komplexný rezervačný systém s integráciou Stripe a správou vozového parku v reálnom čase. Optimalizované pre maximálny konverzný pomer.",
-    icon: <Car size={24} />,
-    accent: "#6366f1",
-    image: "/image/EliteDriveHomePage.PNG",
-    tags: ["Next.js", "Stripe", "Prisma"],
-    year: "02.2026"
-  },
-  {
     status: "In Development", 
     subtitle: "Industrial Manufacturing & Export",
     icon: <Wrench size={24} />,
@@ -61,6 +48,19 @@ const allProjects = [
     tags: ["Next.js", "Industrial SEO", "i18n"],
     year: "2026"
   */},
+  {
+    id: "elitedrive",
+    title: "EliteDrive",
+    subtitle: "Car Rental",
+    status: "Finished", 
+    category: "Web App / Fintech",
+    description: "Komplexný rezervačný systém s integráciou Stripe a správou vozového parku v reálnom čase. Optimalizované pre maximálny konverzný pomer.",
+    icon: <Car size={24} />,
+    accent: "#6366f1",
+    image: "/image/EliteDriveHomePage.PNG",
+    tags: ["Next.js", "Stripe", "Prisma"],
+    year: "02.2026"
+  },
   {
     id: "luxora",
     title: "Luxora Development",
