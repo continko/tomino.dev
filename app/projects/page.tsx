@@ -14,8 +14,42 @@ import {
 import Link from "next/link";
 
 const allProjects = [
-  {/*
-    id: "kovo-sd",
+  {
+    id: "launchkit",
+    title: "LaunchKit",
+    subtitle: "SaaS Boilerplate",
+    status: "In Development", 
+    category: "Developer Tool",
+    description: "Full-stack štartér pre SaaS projekty. Obsahuje predpripravenú autentifikáciu, databázovú schému a integráciu platieb.",
+    icon: <Zap size={24} />,
+    accent: "#f59e0b",
+    image: "/image/LaunchKit.png",
+    tags: ["Supabase", "Next.js"],
+    year: "02.2025"
+  },
+  {
+    id: "elitedrive",
+    title: "EliteDrive",
+    subtitle: "Car Rental",
+    status: "Finished", 
+    category: "Web App / Fintech",
+    description: "Komplexný rezervačný systém s integráciou Stripe a správou vozového parku v reálnom čase. Optimalizované pre maximálny konverzný pomer.",
+    icon: <Car size={24} />,
+    accent: "#6366f1",
+    image: "/image/EliteDriveHomePage.PNG",
+    tags: ["Next.js", "Stripe", "Prisma"],
+    year: "02.2026"
+  },
+  {
+    status: "In Development", 
+    subtitle: "Industrial Manufacturing & Export",
+    icon: <Wrench size={24} />,
+    accent: "#6366f1",
+    tags: ["Next.js", "Industrial SEO", "i18n"],
+    description: "Komplexná digitálna platforma pre poprednú strojársku firmu.",
+    image: "/image/KovoSDHomePage.png",
+    category: "Heavy Industry",
+    /*id: "kovo-sd",
     title: "KOVO SD",
     subtitle: "Industrial Manufacturing & Export",
     category: "Heavy Industry",
@@ -28,21 +62,10 @@ const allProjects = [
     year: "2026"
   */},
   {
-    id: "elitedrive",
-    title: "EliteDrive",
-    subtitle: "Car Rental",
-    category: "Web App / Fintech",
-    description: "Komplexný rezervačný systém s integráciou Stripe a správou vozového parku v reálnom čase. Optimalizované pre maximálny konverzný pomer.",
-    icon: <Car size={24} />,
-    accent: "#6366f1",
-    image: "/image/EliteDriveHomePage.PNG",
-    tags: ["Next.js", "Stripe", "Prisma"],
-    year: "02.2026"
-  },
-  {
     id: "luxora",
     title: "Luxora Development",
     subtitle: "Construction Company",
+    status: "Finished", 
     category: "Corporate Web",
     description: "Digitálna prezentácia pre realitný projekt s dôrazom na high-end architektúru. Obsahuje plynulé scroll animácie a interaktívne galérie.",
     icon: <Building2 size={24} />,
@@ -50,18 +73,6 @@ const allProjects = [
     image: "/image/LuxoraHomePage.PNG",
     tags: ["Framer Motion", "Tailwind"],
     year: "11.2025"
-  },
-  {
-    id: "launchkit",
-    title: "LaunchKit",
-    subtitle: "SaaS Boilerplate",
-    category: "Developer Tool",
-    description: "Full-stack štartér pre SaaS projekty. Obsahuje predpripravenú autentifikáciu, databázovú schému a integráciu platieb.",
-    icon: <Zap size={24} />,
-    accent: "#f59e0b",
-    image: "/image/launchkit.jpg",
-    tags: ["Supabase", "Next.js"],
-    year: "02.2025"
   },
 ];
 
@@ -190,12 +201,17 @@ export default function ProjectsPage() {
                     <div className="flex items-center gap-3">
                       
                       {/* 1. IN PROGRESS BADGE (TERAZ PRVÝ) */}
-                      {/*project.status === "In Development" && (
+                      {project.status === "Finished" && (
+                        <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-[#f703ea]/5 border border-[#f703ea]/40">
+                          <span className="text-[11px] font-black text-[#f703ea] uppercase tracking-widest">Finished✅</span>
+                        </div>
+                      )}
+                      {project.status === "In Development" && (
                         <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-[#dbd7db]/5 border border-[#dbd7db]/40">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#00ff22] animate-pulse shadow-[0_0_8px_#00ff22]" />
-                          <span className="text-[11.5px] font-black text-[#00ff22] uppercase tracking-widest">Building👨‍💻</span>
+                          <span className="text-[11px] font-black text-[#00ff22] uppercase tracking-widest">Building👨‍💻</span>
                         </div>
-                      )*/}
+                      )}
 
                       {/* 2. CATEGORY */}
                       <span className="text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: project.accent }}>
