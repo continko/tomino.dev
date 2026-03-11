@@ -17,7 +17,7 @@ const contactMethods = [
     title: "Video hovor",
     description: "30-minútový discovery call",
     action: "Rezervovať termín",
-    href: "mailto:marek@example.com?subject=Discovery%20Call",
+    href: "mailto:hrmobusiness@gmail.com?subject=Discovery%20Call",
     color: "#a855f7",
   },
 ];

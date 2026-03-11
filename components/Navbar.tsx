@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Link from "next/link"; // Importujeme Link
+import Link from "next/link";
 
 const navLinks = [
   { label: "O mne", href: "/about" },
@@ -34,12 +34,11 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 flex items-center">
-        {/* LOGO - Teraz ako Link na homepage */}
         <Link 
           href="/" 
           className="font-bold text-xl tracking-tighter group cursor-pointer shrink-0"
         >
-          <span className="text-[#e8e8f0] group-hover:text-white transition-colors">tomino</span>
+          <span className="text-[#e8e8f0] group-hover:text-white transition-colors">hrmo</span>
           <span className="text-[#a855f7]">.</span>
           <span className="text-[#a855f7] opacity-80 group-hover:opacity-100 transition-opacity">dev</span>
         </Link>

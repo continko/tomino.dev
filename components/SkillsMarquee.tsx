@@ -32,7 +32,6 @@ const secondRowSkills: SkillItem[] = [
 
 function SkillPill({ skill }: { skill: SkillItem }) {
   return (
-    /* FIXED: bg-[#0a0a0f] a border-[#1e1e2e] aby to sedelo s About */
     <div className="flex items-center gap-3 px-6 py-4 rounded-full border border-[#1e1e2e] bg-[#0a0a0f] mx-3 whitespace-nowrap group hover:border-[#6366f1]/40 transition-all duration-300">
       <span className="text-xl leading-none" role="img">
         {skill.emoji}
@@ -83,7 +82,6 @@ function MarqueeRow({
 export default function SkillsMarquee() {
   return (
     <section id="skills" className="relative py-24 md:py-40 overflow-hidden">
-      {/* 🔮 Background Glows - rovnaké ako na About */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6366f1]/5 rounded-full blur-[120px] -z-10" />
 
       {/* Section header */}
@@ -111,7 +109,6 @@ export default function SkillsMarquee() {
 
       {/* Marquee Section */}
       <div className="relative">
-        {/* FIXED: Prechody na krajoch sú teraz transparentné (nadväzujú na tvoj globálny bg) */}
         <div className="absolute left-0 top-0 bottom-0 w-40 z-10 pointer-events-none bg-gradient-to-r from-transparent via-transparent to-transparent md:from-inherit" 
              style={{ background: 'linear-gradient(to right, rgba(3,3,5,0) 0%, transparent 100%)' }} />
         

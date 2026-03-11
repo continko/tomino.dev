@@ -70,9 +70,8 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-[#555575] uppercase text-[10px] tracking-[0.4em] font-black mb-2">Emailová adresa</h3>
                 
-                {/* Email s fialovou koncovkou .dev */}
                 <p className="text-2xl md:text-4xl font-bold text-white tracking-tighter mb-8 break-all">
-                  tomino.dev@gmail<span style={{ color: '#a855f7' }}>.com</span>
+                  hrmobusiness@gmail<span style={{ color: '#a855f7' }}>.com</span>
                 </p>
               </div>
               

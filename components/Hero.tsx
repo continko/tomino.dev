@@ -38,7 +38,6 @@ export default function Hero() {
       id="about"
       className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-16 overflow-hidden"
     >
-      {/* Dekoratívne pozadie */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none opacity-20"
         style={{

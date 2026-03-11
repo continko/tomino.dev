@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 
 const allProjects = [
-  {
+  {/*
     id: "kovo-sd",
     title: "KOVO SD",
     subtitle: "Industrial Manufacturing & Export",
@@ -26,7 +26,7 @@ const allProjects = [
     image: "/image/KovoSDHomePage.png",
     tags: ["Next.js", "Industrial SEO", "i18n"],
     year: "2026"
-  },
+  */},
   {
     id: "elitedrive",
     title: "EliteDrive",
@@ -190,12 +190,12 @@ export default function ProjectsPage() {
                     <div className="flex items-center gap-3">
                       
                       {/* 1. IN PROGRESS BADGE (TERAZ PRVÝ) */}
-                      {project.status === "In Development" && (
+                      {/*project.status === "In Development" && (
                         <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-[#dbd7db]/5 border border-[#dbd7db]/40">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#00ff22] animate-pulse shadow-[0_0_8px_#00ff22]" />
-                          <span className="text-[13px] font-black text-[#00ff22] uppercase tracking-widest">Building👨‍💻</span>
+                          <span className="text-[11.5px] font-black text-[#00ff22] uppercase tracking-widest">Building👨‍💻</span>
                         </div>
-                      )}
+                      )*/}
 
                       {/* 2. CATEGORY */}
                       <span className="text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: project.accent }}>
@@ -205,7 +205,9 @@ export default function ProjectsPage() {
 
                     <div className="w-8 h-px bg-[#1e1e2e]" />
                     <span className="text-[11px] font-bold text-[#4f4f7a] uppercase tracking-[0.2em]">
+                      {/*
                       {project.tags[0]} • {project.tags[1]}
+                      */}
                     </span>
                   </div>
                   
