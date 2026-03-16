@@ -2,149 +2,102 @@
 
 import { motion } from "framer-motion";
 
-interface SkillItem {
-  name: string;
-  emoji: string;
-  color: string;
-}
+const row1 = ["React", "Next.js", "Tailwind", "TypeScript", "Framer Motion", "Stripe"];
+const row2 = ["Node.js", "PostgreSQL", "Prisma", "Supabase", "Three.js", "Redux"];
+const row3 = ["UI/UX Design", "Git", "Vercel", "Clean Code", "Responsive", "Linux"];
 
-const skills: SkillItem[] = [
-  { name: "React", emoji: "⚛️", color: "#61DAFB" },
-  { name: "Next.js", emoji: "▲", color: "#e8e8f0" },
-  { name: "Tailwind CSS", emoji: "🎨", color: "#38BDF8" },
-  { name: "TypeScript", emoji: "𝕋", color: "#3178C6" },
-  { name: "Node.js", emoji: "🟢", color: "#68A063" },
-  { name: "UI/UX Design", emoji: "✦", color: "#a855f7" },
-  { name: "Framer Motion", emoji: "◐", color: "#FF4154" },
-  { name: "PostgreSQL", emoji: "🐘", color: "#336791" },
-];
-
-const secondRowSkills: SkillItem[] = [
-  { name: "Git", emoji: "⎇", color: "#F05032" },
-  { name: "Prisma", emoji: "◭", color: "#5A67D8" },
-  { name: "Stripe", emoji: "▸", color: "#6772E5" },
-  { name: "Vercel", emoji: "▲", color: "#e8e8f0" },
-  { name: "Lucide Icons", emoji: "✨", color: "#f87171" },
-  { name: "Responsive Design", emoji: "📱", color: "#10b981" },
-  { name: "Supabase", emoji: "⚡", color: "#3ECF8E" },
-  { name: "Clean Code", emoji: "💎", color: "#fbbf24" },
-];
-
-function SkillPill({ skill }: { skill: SkillItem }) {
-  return (
-    <div className="flex items-center gap-3 px-6 py-4 rounded-full border border-[#1e1e2e] bg-[#0a0a0f] mx-3 whitespace-nowrap group hover:border-[#6366f1]/40 transition-all duration-300">
-      <span className="text-xl leading-none" role="img">
-        {skill.emoji}
-      </span>
-      <span
-        className="text-sm font-bold uppercase tracking-widest transition-colors duration-300 group-hover:text-white"
-        style={{ color: "#8888a8" }}
-      >
-        {skill.name}
-      </span>
-    </div>
-  );
-}
-
-function MarqueeRow({
-  items,
-  reverse = false,
-  duration = 35,
-}: {
-  items: SkillItem[];
-  reverse?: boolean;
-  duration?: number;
+function MarqueeRow({ 
+  items, 
+  reverse = false, 
+  speed = 40 
+}: { 
+  items: string[]; 
+  reverse?: boolean; 
+  speed?: number 
 }) {
-  const doubled = [...items, ...items];
-
   return (
-    <div className="overflow-hidden marquee-wrapper py-2">
+    <div className="flex overflow-hidden select-none py-6 border-y border-white/[0.03]">
       <motion.div
-        className="flex"
-        animate={{
-          x: reverse ? ["-50%", "0%"] : ["0%", "-50%"],
-        }}
-        transition={{
-          duration,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        style={{ width: "max-content" }}
+        animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+        transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
+        className="flex flex-nowrap min-w-full items-center"
       >
-        {doubled.map((skill, i) => (
-          <SkillPill key={`${skill.name}-${i}`} skill={skill} />
+        {[...items, ...items].map((skill, i) => (
+          <span 
+            key={`${skill}-${i}`} 
+            className="text-4xl md:text-6xl font-black uppercase tracking-tighter px-12
+                       text-transparent transition-all duration-500 cursor-default hover:scale-105"
+            style={{ 
+              WebkitTextStroke: "1px rgba(255,255,255,0.3)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.webkitTextStroke = "1px #ec4899";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.webkitTextStroke = "1px rgba(255,255,255,0.3)";
+            }}
+          >
+            {skill}
+          </span>
         ))}
       </motion.div>
     </div>
   );
 }
 
-export default function SkillsMarquee() {
+export default function Skills() {
   return (
-    <section id="skills" className="relative py-24 md:py-40 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6366f1]/5 rounded-full blur-[120px] -z-10" />
-
-      {/* Section header */}
-      <div className="px-6 max-w-6xl mx-auto mb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-px bg-[#6366f1]" />
-            <span className="text-xs font-black text-[#6366f1] uppercase tracking-[0.4em]">
-              Tech Stack
-            </span>
+    <section id="skills" className="py-32 bg-transparent relative">
+      <div className="px-6 max-w-7xl mx-auto mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+          <div>
+            <span className="text-[10px] font-black text-[#ec4899] uppercase tracking-[0.6em] block mb-6">Tech Stack</span>
+            <h2 className="text-7xl md:text-9xl font-black text-white tracking-[-0.06em] leading-[0.8]">
+              Nástroje<span className="text-[#ec4899]">.</span>
+            </h2>
           </div>
-          <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-none mb-8">
-            Nástroje <br /> <span className="text-[#8888a8]">úspechu.</span>
-          </h2>
-          <p className="text-[#8888a8] text-xl font-light max-w-xl leading-relaxed">
-            Moderné technológie, ktoré transformujú <span className="text-white italic">kreatívne nápady</span> na škálovateľné digitálne produkty.
+          <div className="">
+            <p className="text-[#555575] text-xl max-w-xs leading-relaxed font-medium border-l border-[#1e1e2e] pl-8">
+            Nástroje, ktoré transformujú <span className="text-white">víziu</span> na funkčný kód.
           </p>
-        </motion.div>
-      </div>
-
-      {/* Marquee Section */}
-      <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-40 z-10 pointer-events-none bg-gradient-to-r from-transparent via-transparent to-transparent md:from-inherit" 
-             style={{ background: 'linear-gradient(to right, rgba(3,3,5,0) 0%, transparent 100%)' }} />
-        
-        <div className="flex flex-col gap-6">
-          <MarqueeRow items={skills} duration={30} />
-          <MarqueeRow items={secondRowSkills} reverse duration={35} />
+          </div>
         </div>
       </div>
 
-      {/* Stats Section */}
-      <div className="px-6 max-w-6xl mx-auto mt-24">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#1e1e2e]/40 rounded-[2.5rem] overflow-hidden border border-[#1e1e2e]/50 backdrop-blur-sm"
-        >
+      <div className="flex flex-col gap-2">
+        <MarqueeRow items={row1} speed={30} />
+        <MarqueeRow items={row2} reverse speed={40} />
+        <MarqueeRow items={row3} speed={35} />
+      </div>
+
+      {/* Stats */}
+      <div className="px-6 max-w-7xl mx-auto mt-40">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
           {[
-            { value: "2+", label: "Roky v kóde" },
-            { value: "8+", label: "Projekty" },
-            { value: "12+", label: "Tech stack" },
-            { value: "∞", label: "Debug káv" },
+            { value: "2+", label: "ROKY SKÚSENOSTÍ" },
+            { value: "8+", label: "DOKONČENÝCH PROJEKTOV" },
+            { value: "12+", label: "TECHNOLÓGIÍ" },
+            { value: "∞", label: "CHUŤ RÁSŤ" },
           ].map((stat) => (
-            <div
-              key={stat.label}
-              className="bg-[#0a0a0f] px-8 py-12 text-center group hover:bg-[#0d0d14] transition-all duration-500"
+            <motion.div 
+              key={stat.label} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group"
             >
-              <div className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tighter group-hover:text-[#6366f1] transition-colors">
+              <div className="text-7xl md:text-9xl font-black text-white group-hover:text-[#ec4899] transition-colors duration-500 tracking-tighter leading-none mb-4">
                 {stat.value}
               </div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-[#4f4f7a] font-bold">
-                {stat.label}
+              <div className="flex items-center gap-3">
+                <div className="h-px w-8 bg-[#ec4899] group-hover:w-12 transition-all duration-500" />
+                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-[#ec4899]">
+                  {stat.label}
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
