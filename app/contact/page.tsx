@@ -142,7 +142,7 @@ export default function ContactPage() {
           {/* QUICK INFO BAR */}
           <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: MapPin, text: "Žilina, Slovensko" },
+              { icon: MapPin, text: "Dolný Kubín, Slovensko" },
               { icon: Clock, text: "GMT+1 (9:00 - 18:00)" },
             ].map((item, i) => (
               <div key={i} className="p-8 rounded-[2rem] bg-[#0a0a0f] border border-[#1e1e2e] flex items-center gap-6 group hover:border-[#ec4899]/30 transition-all duration-500">
