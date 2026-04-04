@@ -14,7 +14,7 @@ export default function ContactPage() {
   const [copiedPhone, setCopiedPhone] = useState(false);
   
   const email = "hello@hrmo.dev";
-  const phone = "+421 918 765 525";
+  const phone = process.env.NEXT_PUBLIC_PHONE ?? "";
 
   const copyToClipboard = (text: string, type: 'email' | 'phone') => {
     navigator.clipboard.writeText(text);

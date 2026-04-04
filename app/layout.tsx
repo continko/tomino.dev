@@ -3,16 +3,47 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hrmo.dev";
+
 export const metadata: Metadata = {
-  title: "Tomáš Hrmo — Full-Stack Dev",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "Tomáš Hrmo — Full-Stack Developer",
+    template: "%s | Tomáš Hrmo",
+  },
   description:
-    "Full-stack developer špecializujúci sa na moderné webové aplikácie s dôrazom na výkon, dizajn a používateľský zážitok.",
-  keywords: ["full-stack developer", "Next.js", "React", "TypeScript", "UI/UX"],
-  authors: [{ name: "Tomáš Hrmo" }],
+    "Full-stack developer špecializujúci sa na moderné webové aplikácie s dôrazom na výkon, dizajn a používateľský zážitok. Next.js, TypeScript, React.",
+  keywords: ["full-stack developer", "Next.js", "React", "TypeScript", "UI/UX", "web development", "Slovakia"],
+  authors: [{ name: "Tomáš Hrmo", url: BASE_URL }],
+  creator: "Tomáš Hrmo",
   openGraph: {
-    title: "Tomáš Hrmo — Full-Stack Dev",
-    description: "Full-stack developer špecializujúci sa na moderné webové aplikácie.",
+    title: "Tomáš Hrmo — Full-Stack Developer",
+    description: "Full-stack developer špecializujúci sa na moderné webové aplikácie s dôrazom na výkon, dizajn a UX.",
+    url: BASE_URL,
+    siteName: "hrmo.dev",
     type: "website",
+    locale: "sk_SK",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tomáš Hrmo — Full-Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tomáš Hrmo — Full-Stack Developer",
+    description: "Full-stack developer | Next.js · TypeScript · React",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: BASE_URL,
   },
 };
 

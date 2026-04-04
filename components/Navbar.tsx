@@ -63,12 +63,12 @@ export default function Navbar() {
         </div>
 
         {/* STATUS BADGE */}
-        <div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-full bg-[#10101a] border border-[#1e1e2e] shrink-0">
+        {/*<div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-full bg-[#10101a] border border-[#1e1e2e] shrink-0">
           <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
           <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#a5b4fc]">
             Dostupný na projekty
           </span>
-        </div>
+        </div>*/}
 
         {/* MOBILE TOGGLE */}
         <div className="md:hidden flex-1 flex justify-end">
